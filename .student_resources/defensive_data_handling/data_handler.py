@@ -95,3 +95,20 @@ def validate_number(number: str) -> bool:
 # Function to salt a hash input
 def salt_and_hash(password: str) -> bytes:
     return  # to be implemented
+
+
+def check_password(password: str) -> bytes:
+    if len(password) < 9:
+        return False
+    if len(password) > 12:
+        return False
+    if not password.isalpha:
+        return False
+    if not re.search(r"[A-Z]", password):
+        return False
+    if not re.search(r"[a-z]", password):
+        return False
+    if not re.search(r"[0-9]", password):
+        return False
+    return True
+
