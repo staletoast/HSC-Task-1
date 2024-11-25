@@ -96,19 +96,21 @@ def validate_number(number: str) -> bool:
 def salt_and_hash(password: str) -> bytes:
     return  # to be implemented
 
+##############
 
-def check_password(password: str) -> bytes:
+def check_password(password):
     if len(password) < 9:
         return False
+        print ("password is under 9 characters")
     if len(password) > 12:
         return False
-    if not password.isalpha:
+        print ("password is above 12 characters")
+    if not name.isalpha():
         return False
-    if not re.search(r"[A-Z]", password):
+        print ("password does not contain letters")
+    if not name.isnum()):
         return False
-    if not re.search(r"[a-z]", password):
-        return False
-    if not re.search(r"[0-9]", password):
-        return False
+        print ("password does not contain numbers")
+
     return True
 

@@ -46,6 +46,14 @@ def insertFeedback(feedback):
     con.commit()
     con.close()
 
+def sanitise(input_string):
+    to_replace = ["<", ">", ";"]
+    replacements = ["%3C", "%3E", "%3B"]
+    char_list = list(input_string)
+    for i in range(len(char_list)):
+        if char_list[i] in to_replace:
+            index = to_replace.index(char_list[i])
+            char_list[i] = replacements[index]
 
 def listFeedback():
     con = sql.connect("database_files/database.db")
