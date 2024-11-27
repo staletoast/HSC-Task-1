@@ -111,6 +111,5 @@ def check_password(password):
     if not name.isnum()):
         return False
         print ("password does not contain numbers")
-
     return True
 
